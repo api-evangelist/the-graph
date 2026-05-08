@@ -1,0 +1,29 @@
+aid: the-graph
+url: https://raw.githubusercontent.com/api-evangelist/the-graph/refs/heads/main/apis.yml
+name: The Graph
+x-type: company
+description: >-
+  The Graph is a decentralized protocol for indexing and querying blockchain data via GraphQL subgraphs. Used by thousands of dApps to query Ethereum, L2s, and beyond.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Web3
+  - Indexing
+  - GraphQL
+  - Decentralized
+  - Subgraphs
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://thegraph.com/
+  - type: Plans
+    url: plans/the-graph-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/the-graph-rate-limits.yml
+  - type: FinOps
+    url: finops/the-graph-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
