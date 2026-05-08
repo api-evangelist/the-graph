@@ -5,31 +5,35 @@ provider: The Graph
 providerId: the-graph
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Web3
 - Indexing
 - GraphQL
-- Decentralized
 - Subgraphs
+- Multi-chain
 - Rate Limiting
-- Quotas
-- Throttling
-description: Placeholder rate-limit artifact for The Graph. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: The Graph gateway enforces per-API-key rate limits in addition to query
+  metering. Substreams are billed by data egress.
+notes: Limits depend on subgraph and gateway.
 sources:
-- https://thegraph.com/
+- https://thegraph.com/docs/en/billing/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: Subgraph Gateway
+  scope: api_key
+  metric: queries_per_second
+  limit: 30
+  notes: Default per-key throughput.
+- name: Token API
+  scope: api_key
+  metric: requests_per_second
+  limit: 10
+  notes: Default Token API rate.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Exponential backoff on 429; cache GraphQL responses where idempotent.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -5,20 +5,20 @@ provider: The Graph
 providerId: the-graph
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Web3
 - Indexing
 - GraphQL
-- Decentralized
 - Subgraphs
+- Multi-chain
 - FinOps
-- Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for The Graph. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: The Graph bills query consumption per 100k queries in USD or GRT. Substreams
+  bill on data egress; Token API bills per request.
+notes: Invoiced via Edge & Node / Subgraph Studio billing.
 sources:
-- https://thegraph.com/
+- https://thegraph.com/billing
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -26,41 +26,54 @@ alignedWith:
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: The Graph
+publisherName: The Graph (Edge & Node)
 serviceCategory: Web3
 billingModel:
-  pricingCategory: To Be Reconciled
+  pricingCategory: Pay-per-Query
   billingFrequency: Monthly
-  billingCurrency: USD
+  billingCurrency: USD/GRT
   chargeCategories:
   - Usage
   - Purchase
-  - Adjustment
 focusColumns:
   ServiceName: The Graph
   ServiceCategory: Web3
   ProviderName: The Graph
-  PublisherName: The Graph
+  PublisherName: Edge & Node
   InvoiceIssuerName: The Graph
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: subgraph_queries
+  description: GraphQL queries against subgraphs.
+  unit: query
   aggregation: sum
   dimensions:
-  - account
-  - resource
+  - api_key
+  - subgraph
+- name: token_api_requests
+  description: Token API REST requests.
+  unit: request
+  aggregation: sum
+  dimensions:
+  - api_key
+  - endpoint
+- name: substream_egress
+  description: Substream gRPC bytes streamed.
+  unit: byte
+  aggregation: sum
+  dimensions:
+  - substream
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Subgraph Studio billing dashboard tracks queries by API key.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: API key per app/team.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Cache GraphQL responses; collapse N+1 queries; choose subgraphs with
+    low query weight.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: API key owners review weekly query burn.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -5,37 +5,79 @@ provider: The Graph
 providerId: the-graph
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Web3
 - Indexing
 - GraphQL
-- Decentralized
 - Subgraphs
+- Multi-chain
 - Plans
-description: Placeholder plans/pricing artifact for The Graph. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: The Graph charges per query at the gateway. The Free plan includes 100k
+  queries/month; thereafter queries are billed in USD (or GRT on the decentralized
+  network). Token API and Substreams have separate metering.
+notes: Verify against thegraph.com/billing.
 sources:
-- https://thegraph.com/
+- https://thegraph.com/billing
+- https://thegraph.com/docs/en/billing/
 plans:
-- id: the-graph-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: the-graph-free
+  name: Free
+  type: free
+  description: Free tier with 100k subgraph queries/month.
   entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
+  - label: Free Queries
+    name: free_queries
+    type: included
+    metric: queries
+    limit: 100000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  elements:
+  - name: Subgraph Queries
+  - name: Hosted Gateway
+- id: the-graph-growth
+  name: Growth (Pay-as-you-go)
+  type: paid
+  description: Per-query billing once Free quota is exhausted. $4 per 100k queries
+    on the Pinned Mainnet gateway (verify).
+  entries:
+  - label: Per-Query Rate
+    name: query_rate
+    type: metered
+    metric: queries
     limit: -1
     timeFrame: usage
     geo: global
-    unit: 1
-    price: see https://thegraph.com/
+    unit: 100000
+    price: 4
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: Email Support
+  - name: Higher Quotas
+- id: the-graph-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom enterprise contracts including dedicated Substreams capacity
+    and Token API volume discounts.
+  entries:
+  - label: Custom
+    name: custom
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Dedicated Substreams
+  - name: Volume Discount
+  - name: SLAs
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
