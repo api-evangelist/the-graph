@@ -1,7 +1,7 @@
 aid: the-graph
 url: https://raw.githubusercontent.com/api-evangelist/the-graph/refs/heads/main/apis.yml
 name: The Graph
-x-type: company
+kind: company
 description: The Graph is a decentralized blockchain data indexing protocol. It exposes
   Subgraphs (GraphQL APIs over indexed on-chain data), Substreams (parallel streaming
   dataflows), the Token API (REST/MCP for token data), and supports 80+ chains. Self-hosted
