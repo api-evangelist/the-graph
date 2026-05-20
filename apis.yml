@@ -8,88 +8,90 @@ description: The Graph is a decentralized blockchain data indexing protocol. It 
   Graph Node and Firehose are open-source.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Web3
-- Indexing
-- GraphQL
-- Subgraphs
-- Multi-chain
+  - Web3
+  - Indexing
+  - GraphQL
+  - Subgraphs
+  - Multi-chain
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-- aid: the-graph:subgraphs
-  name: The Graph Subgraphs (GraphQL)
-  description: Per-subgraph GraphQL endpoints served by the decentralized network
-    of Indexers. Each subgraph defines its own schema; queries are billed in GRT or
-    via a hosted gateway in USD.
-  humanURL: https://thegraph.com/docs/en/subgraphs/querying/introduction/
-  baseURL: https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/{subgraphId}
-  tags:
-  - GraphQL
-  - Subgraphs
-  - Decentralized
-  properties:
-  - type: Documentation
-    url: https://thegraph.com/docs/en/subgraphs/querying/introduction/
-- aid: the-graph:token-api
-  name: The Graph Token API
-  description: REST API for cross-chain token data (balances, holders, prices, transfers,
-    metadata) with built-in MCP server for AI agents.
-  humanURL: https://thegraph.com/docs/en/token-api/quick-start/
-  baseURL: https://token-api.thegraph.com
-  tags:
-  - REST
-  - Tokens
-  - MCP
-  properties:
-  - type: Documentation
-    url: https://thegraph.com/docs/en/token-api/quick-start/
-- aid: the-graph:substreams
-  name: The Graph Substreams
-  description: gRPC streaming protocol for parallelized blockchain dataflows backed
-    by Firehose. Substreams power high-throughput indexing pipelines.
-  humanURL: https://thegraph.com/docs/en/substreams/introduction/
-  baseURL: grpc://mainnet.eth.streamingfast.io:443
-  tags:
-  - gRPC
-  - Streaming
-  properties:
-  - type: Documentation
-    url: https://thegraph.com/docs/en/substreams/introduction/
-- aid: the-graph:graph-node-rpc
-  name: Graph Node Admin JSON-RPC (self-hosted)
-  description: JSON-RPC admin interface to a self-hosted Graph Node for deploying,
-    listing, and managing subgraphs. Public hosted-service is deprecated; this surface
-    applies to self-managed indexers.
-  humanURL: https://github.com/graphprotocol/graph-node
-  baseURL: http://{graph-node}:8020
-  tags:
-  - JSON-RPC
-  - Admin
-  properties:
-  - type: Documentation
-    url: https://github.com/graphprotocol/graph-node
-- aid: the-graph:firehose
-  name: Firehose
-  description: Open-source flat-file extraction layer that powers Substreams. Provides
-    chain-specific gRPC streams of blocks and transactions.
-  humanURL: https://thegraph.com/docs/en/substreams/firehose/
-  baseURL: varies per chain
-  tags:
-  - gRPC
-  - Streaming
-  properties:
-  - type: Documentation
-    url: https://thegraph.com/docs/en/substreams/firehose/
+  - aid: the-graph:subgraphs
+    name: The Graph Subgraphs (GraphQL)
+    description: Per-subgraph GraphQL endpoints served by the decentralized network
+      of Indexers. Each subgraph defines its own schema; queries are billed in GRT or
+      via a hosted gateway in USD.
+    humanURL: https://thegraph.com/docs/en/subgraphs/querying/introduction/
+    baseURL: https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/{subgraphId}
+    tags:
+    - GraphQL
+    - Subgraphs
+    - Decentralized
+    properties:
+    - type: Documentation
+      url: https://thegraph.com/docs/en/subgraphs/querying/introduction/
+  - aid: the-graph:token-api
+    name: The Graph Token API
+    description: REST API for cross-chain token data (balances, holders, prices, transfers,
+      metadata) with built-in MCP server for AI agents.
+    humanURL: https://thegraph.com/docs/en/token-api/quick-start/
+    baseURL: https://token-api.thegraph.com
+    tags:
+    - REST
+    - Tokens
+    - MCP
+    properties:
+    - type: Documentation
+      url: https://thegraph.com/docs/en/token-api/quick-start/
+  - aid: the-graph:substreams
+    name: The Graph Substreams
+    description: gRPC streaming protocol for parallelized blockchain dataflows backed
+      by Firehose. Substreams power high-throughput indexing pipelines.
+    humanURL: https://thegraph.com/docs/en/substreams/introduction/
+    baseURL: grpc://mainnet.eth.streamingfast.io:443
+    tags:
+    - gRPC
+    - Streaming
+    properties:
+    - type: Documentation
+      url: https://thegraph.com/docs/en/substreams/introduction/
+  - aid: the-graph:graph-node-rpc
+    name: Graph Node Admin JSON-RPC (self-hosted)
+    description: JSON-RPC admin interface to a self-hosted Graph Node for deploying,
+      listing, and managing subgraphs. Public hosted-service is deprecated; this surface
+      applies to self-managed indexers.
+    humanURL: https://github.com/graphprotocol/graph-node
+    baseURL: http://{graph-node}:8020
+    tags:
+    - JSON-RPC
+    - Admin
+    properties:
+    - type: Documentation
+      url: https://github.com/graphprotocol/graph-node
+  - aid: the-graph:firehose
+    name: Firehose
+    description: Open-source flat-file extraction layer that powers Substreams. Provides
+      chain-specific gRPC streams of blocks and transactions.
+    humanURL: https://thegraph.com/docs/en/substreams/firehose/
+    baseURL: varies per chain
+    tags:
+    - gRPC
+    - Streaming
+    properties:
+    - type: Documentation
+      url: https://thegraph.com/docs/en/substreams/firehose/
 common:
-- type: Website
-  url: https://thegraph.com/
-- type: Plans
-  url: plans/the-graph-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/the-graph-rate-limits.yml
-- type: FinOps
-  url: finops/the-graph-finops.yml
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/thegraph
+  - type: Website
+    url: https://thegraph.com/
+  - type: Plans
+    url: plans/the-graph-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/the-graph-rate-limits.yml
+  - type: FinOps
+    url: finops/the-graph-finops.yml
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
