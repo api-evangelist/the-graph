@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: The Graph Gateway (Subgraphs GraphQL)
+  description: >-
+    The Graph decentralized network gateway accepts POST GraphQL queries
+    against individual subgraphs. The query URL embeds the API key directly in
+    the path; alternatively the API key may be supplied as an Authorization
+    Bearer token. Each subgraph defines its own GraphQL schema.
+  version: "1.0"
+  contact:
+    name: The Graph Docs
+    url: https://thegraph.com/docs/en/subgraphs/querying/introduction/
+servers:
+  - url: https://gateway.thegraph.com
+    description: The Graph decentralized gateway
+security:
+  - bearerAuth: []
+  - {}
+paths:
+  /api/{apiKey}/subgraphs/id/{subgraphId}:
+    parameters:
+      - name: apiKey
+        in: path
+        required: true
+        description: API key issued via Subgraph Studio.
+        schema:
+          type: string
+      - name: subgraphId
+        in: path
+        required: true
+        description: Deployed subgraph ID.
+        schema:
+          type: string
+    post:
+      summary: Execute a GraphQL query against a subgraph
+      operationId: querySubgraph
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query:
+                  type: string
+                variables:
+                  type: object
+                operationName:
+                  type: string
+      responses:
+        '200':
+          description: GraphQL response with data/errors.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                  errors:
+                    type: array
+                    items:
+                      type: object
+  /api/subgraphs/id/{subgraphId}:
+    parameters:
+      - name: subgraphId
+        in: path
+        required: true
+        description: Deployed subgraph ID. API key provided via Authorization header.
+        schema:
+          type: string
+    post:
+      summary: Execute a GraphQL query against a subgraph (header-auth variant)
+      operationId: querySubgraphHeaderAuth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query:
+                  type: string
+                variables:
+                  type: object
+                operationName:
+                  type: string
+      responses:
+        '200':
+          description: GraphQL response with data/errors.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: The Graph API key passed as an Authorization Bearer token.
