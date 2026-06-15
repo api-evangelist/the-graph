@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The Graph Gateway (Subgraphs GraphQL)",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Execute a GraphQL query against a subgraph",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://gateway.thegraph.com/api/:apiKey/subgraphs/id/:subgraphId",
+        "params": [
+          {
+            "name": "apiKey",
+            "value": "",
+            "type": "path",
+            "description": "API key issued via Subgraph Studio."
+          },
+          {
+            "name": "subgraphId",
+            "value": "",
+            "type": "path",
+            "description": "Deployed subgraph ID."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Execute a GraphQL query against a subgraph"
+    },
+    {
+      "info": {
+        "name": "Execute a GraphQL query against a subgraph (header-auth variant)",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://gateway.thegraph.com/api/subgraphs/id/:subgraphId",
+        "params": [
+          {
+            "name": "subgraphId",
+            "value": "",
+            "type": "path",
+            "description": "Deployed subgraph ID. API key provided via Authorization header."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Execute a GraphQL query against a subgraph (header-auth variant)"
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,274 @@
+{
+  "item": [
+    {
+      "id": "fb6c50e6-0333-4db1-a921-b2698944f552",
+      "name": "Execute a GraphQL query against a subgraph",
+      "request": {
+        "name": "Execute a GraphQL query against a subgraph",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            ":apiKey",
+            "subgraphs",
+            "id",
+            ":subgraphId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "apiKey",
+              "description": "(Required) API key issued via Subgraph Studio."
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "subgraphId",
+              "description": "(Required) Deployed subgraph ID."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": \"<object>\",\n  \"operationName\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "e57f64d0-0c86-47fc-8db2-485182006541",
+          "name": "GraphQL response with data/errors.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                ":apiKey",
+                "subgraphs",
+                "id",
+                ":subgraphId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apiKey",
+                  "description": "(Required) API key issued via Subgraph Studio."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subgraphId",
+                  "description": "(Required) Deployed subgraph ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": \"<object>\",\n  \"operationName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"data\": {}\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a7e937a4-640a-42e8-98ac-bbaf0e6f9011",
+      "name": "Execute a GraphQL query against a subgraph (header-auth variant)",
+      "request": {
+        "name": "Execute a GraphQL query against a subgraph (header-auth variant)",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "subgraphs",
+            "id",
+            ":subgraphId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "subgraphId",
+              "description": "(Required) Deployed subgraph ID. API key provided via Authorization header."
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": \"<object>\",\n  \"operationName\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "b97c4c8d-4da4-4a53-9e59-7691475f0fda",
+          "name": "GraphQL response with data/errors.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "subgraphs",
+                "id",
+                ":subgraphId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subgraphId",
+                  "description": "(Required) Deployed subgraph ID. API key provided via Authorization header."
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"variables\": \"<object>\",\n  \"operationName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://gateway.thegraph.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e71f6a98-d975-4b5a-b1f5-5f485a83ccc2",
+    "name": "The Graph Gateway (Subgraphs GraphQL)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Graph decentralized network gateway accepts POST GraphQL queries against individual subgraphs. The query URL embeds the API key directly in the path; alternatively the API key may be supplied as an Authorization Bearer token. Each subgraph defines its own GraphQL schema.\n\nContact Support:\n Name: The Graph Docs",
+      "type": "text/plain"
+    }
+  }
+}
