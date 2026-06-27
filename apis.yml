@@ -84,7 +84,7 @@ common:
   url: rate-limits/the-graph-rate-limits.yml
 - type: FinOps
   url: finops/the-graph-finops.yml
-- type: LLMsTxt
+- type: LlmsText
   url: https://token-api.thegraph.com/llms.txt
 maintainers:
 - FN: Kin Lane
