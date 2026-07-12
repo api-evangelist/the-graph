@@ -74,6 +74,12 @@ apis:
   - type: Documentation
     url: https://thegraph.com/docs/en/substreams/firehose/
 common:
+- type: VulnerabilityDisclosure
+  url: security/the-graph-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/the-graph-domain-security.yml
+- type: Authentication
+  url: authentication/the-graph-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/thegraph
 - type: Website
@@ -86,6 +92,8 @@ common:
   url: finops/the-graph-finops.yml
 - type: LlmsText
   url: https://token-api.thegraph.com/llms.txt
+- type: Blog
+  url: https://thegraph.com/blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
