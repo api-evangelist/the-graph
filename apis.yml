@@ -3,7 +3,20 @@ url: https://raw.githubusercontent.com/api-evangelist/the-graph/refs/heads/main/
 name: The Graph
 kind: company
 description: The Graph is a decentralized blockchain data indexing protocol. It exposes Subgraphs (GraphQL APIs over indexed on-chain data), Substreams (parallel streaming dataflows), the Token API (REST/MCP for token data), and supports 80+ chains. Self-hosted Graph Node and Firehose are open-source.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/the-graph.png
 tags:
 - Web3
 - Indexing
@@ -16,7 +29,9 @@ specificationVersion: '0.19'
 apis:
 - aid: the-graph:subgraphs
   name: The Graph Subgraphs (GraphQL)
-  description: Per-subgraph GraphQL endpoints served by the decentralized network of Indexers. Each subgraph defines its own schema; queries are billed in GRT or via a hosted gateway in USD.
+  description: >-
+    Per-subgraph GraphQL endpoints served by the decentralized network of Indexers. Each subgraph defines
+    its own schema; queries are billed in GRT or via a hosted gateway in USD.
   humanURL: https://thegraph.com/docs/en/subgraphs/querying/introduction/
   baseURL: https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/{subgraphId}
   tags:
@@ -30,7 +45,9 @@ apis:
     type: GraphQL
 - aid: the-graph:token-api
   name: The Graph Token API
-  description: REST API for cross-chain token data (balances, holders, prices, transfers, metadata) with built-in MCP server for AI agents.
+  description: >-
+    REST API for cross-chain token data (balances, holders, prices, transfers, metadata) with built-in
+    MCP server for AI agents.
   humanURL: https://thegraph.com/docs/en/token-api/quick-start/
   baseURL: https://token-api.thegraph.com
   tags:
@@ -42,7 +59,9 @@ apis:
     url: https://thegraph.com/docs/en/token-api/quick-start/
 - aid: the-graph:substreams
   name: The Graph Substreams
-  description: gRPC streaming protocol for parallelized blockchain dataflows backed by Firehose. Substreams power high-throughput indexing pipelines.
+  description: >-
+    gRPC streaming protocol for parallelized blockchain dataflows backed by Firehose. Substreams power
+    high-throughput indexing pipelines.
   humanURL: https://thegraph.com/docs/en/substreams/introduction/
   baseURL: grpc://mainnet.eth.streamingfast.io:443
   tags:
@@ -53,7 +72,9 @@ apis:
     url: https://thegraph.com/docs/en/substreams/introduction/
 - aid: the-graph:graph-node-rpc
   name: Graph Node Admin JSON-RPC (self-hosted)
-  description: JSON-RPC admin interface to a self-hosted Graph Node for deploying, listing, and managing subgraphs. Public hosted-service is deprecated; this surface applies to self-managed indexers.
+  description: >-
+    JSON-RPC admin interface to a self-hosted Graph Node for deploying, listing, and managing subgraphs.
+    Public hosted-service is deprecated; this surface applies to self-managed indexers.
   humanURL: https://github.com/graphprotocol/graph-node
   baseURL: http://{graph-node}:8020
   tags:
@@ -64,7 +85,9 @@ apis:
     url: https://github.com/graphprotocol/graph-node
 - aid: the-graph:firehose
   name: Firehose
-  description: Open-source flat-file extraction layer that powers Substreams. Provides chain-specific gRPC streams of blocks and transactions.
+  description: >-
+    Open-source flat-file extraction layer that powers Substreams. Provides chain-specific gRPC streams
+    of blocks and transactions.
   humanURL: https://thegraph.com/docs/en/substreams/firehose/
   baseURL: varies per chain
   tags:
@@ -73,6 +96,16 @@ apis:
   properties:
   - type: Documentation
     url: https://thegraph.com/docs/en/substreams/firehose/
+- aid: the-graph:the-graph-subgraphs-api
+  name: The Graph Subgraphs API
+  description: The Subgraphs API from The Graph — 2 operation(s) for subgraphs.
+  humanURL: https://thegraph.com/docs/en/subgraphs/querying/introduction/
+  baseURL: https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/{subgraphId}
+  tags:
+  - Subgraphs
+  properties:
+  - type: OpenAPI
+    url: openapi/the-graph-subgraphs-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/the-graph-agentic-access.yml
