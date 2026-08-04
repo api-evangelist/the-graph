@@ -1,0 +1,14 @@
+{
+  "provider": "the-graph",
+  "sources": [
+    "the-graph-subgraphs-api-openapi.yml"
+  ],
+  "outputs": [
+    "the-graph-subgraphs-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
