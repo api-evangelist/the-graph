@@ -3,6 +3,18 @@ url: https://raw.githubusercontent.com/api-evangelist/the-graph/refs/heads/main/
 name: The Graph
 kind: company
 description: The Graph is a decentralized blockchain data indexing protocol. It exposes Subgraphs (GraphQL APIs over indexed on-chain data), Substreams (parallel streaming dataflows), the Token API (REST/MCP for token data), and supports 80+ chains. Self-hosted Graph Node and Firehose are open-source.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
