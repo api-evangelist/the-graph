@@ -34,7 +34,7 @@ tags:
 - Web3
 - Indexing
 - GraphQL
-- Subgraphs
+- Subgraph
 - Multi-Chain
 tags_raw:
 - Web3
@@ -54,6 +54,10 @@ apis:
   humanURL: https://thegraph.com/docs/en/subgraphs/querying/introduction/
   baseURL: https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/{subgraphId}
   tags:
+  - GraphQL
+  - Subgraph
+  - Decentralized
+  tags_raw:
   - GraphQL
   - Subgraphs
   - Decentralized
@@ -121,6 +125,8 @@ apis:
   humanURL: https://thegraph.com/docs/en/subgraphs/querying/introduction/
   baseURL: https://gateway.thegraph.com/api/{apiKey}/subgraphs/id/{subgraphId}
   tags:
+  - Subgraph
+  tags_raw:
   - Subgraphs
   properties:
   - type: OpenAPI
