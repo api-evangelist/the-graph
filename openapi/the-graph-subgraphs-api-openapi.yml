@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: The Graph Gateway ( GraphQL) Subgraphs API
+  title: Graph Gateway ( GraphQL) Subgraphs API
   description: The Graph decentralized network gateway accepts POST GraphQL queries against individual subgraphs. The query URL embeds the API key directly in the path; alternatively the API key may be supplied as an Authorization Bearer token. Each subgraph defines its own GraphQL schema.
   version: '1.0'
   contact:

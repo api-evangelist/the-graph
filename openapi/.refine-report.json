@@ -1,7 +1,7 @@
 {
   "provider": "the-graph",
   "sources": [
-    "the-graph-subgraphs-api-openapi.yml"
+    "_original/the-graph-openapi.yml"
   ],
   "outputs": [
     "the-graph-subgraphs-api-openapi.yml"
@@ -9,6 +9,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "the-graph-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "the-graph-openapi.yml: tagged paths POST /api/{apiKey}/subgraphs/id/{subgraphId} -> Subgraphs",
+    "the-graph-openapi.yml: tagged paths POST /api/subgraphs/id/{subgraphId} -> Subgraphs",
+    "the-graph-openapi.yml: declared missing tag: Subgraphs",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "the-graph-subgraphs-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
